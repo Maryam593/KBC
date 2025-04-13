@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 interface Question {
   question: string;
@@ -9,7 +9,7 @@ interface Question {
 
 const App = () => {
   const [question, setQuestion] = useState<Question | null>(null);
-  const [answer, setAnswer] = useState<string>('');
+  const [answer, setAnswer] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isQuizEnd, setIsQuizEnd] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -23,7 +23,7 @@ const App = () => {
   // Function to fetch new question
   const QuestionQuiz = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/get-question');
+      const response = await axios.get("http://127.0.0.1:8000/get-question");
       if (response.status === 200) {
         const data = response.data;
 
@@ -34,7 +34,7 @@ const App = () => {
         }
       }
     } catch (err) {
-      console.error('Error fetching question', err);
+      console.error("Error fetching question", err);
       setError(true);
     }
   };
@@ -43,7 +43,9 @@ const App = () => {
   const submitAnswer = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8000/submit-answer', { answer });
+      const response = await axios.post("http://127.0.0.1:8000/submit-answer", {
+        answer,
+      });
       const data = response.data;
       if (data.correct) {
         setScore((prev) => prev + 1);
@@ -59,14 +61,14 @@ const App = () => {
       console.log(error);
       setError(true);
     } finally {
-      setAnswer('');
+      setAnswer("");
     }
   };
 
   // Resetting the quiz
   const restartQuiz = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/reset-quiz');
+      const response = await axios.get("http://127.0.0.1:8000/reset-quiz");
       if (response.status === 200) {
         setScore(0);
         setRupee(0);
@@ -81,15 +83,20 @@ const App = () => {
 
   return (
     <>
+      <div className="bg-yellow-100 top-0 right-0 ">
+        <p className="">{score}</p>
+      </div>
       {/* For error */}
       <div className="bg-red-900 top-4 rounded-2xl flex items-center justify-center">
         {error && <p className="text-white">{error}</p>}
       </div>
 
       {/* For question */}
-      <div className="bg-red-600">
+      <div className="bg-white m-10 h-full p-10 w-[510px]  shadow-[9px_9px_0px_0px_#000] flex justify-center">
+        <div>
         {question && <div>Question: {question.question}</div>}
         <div>
+        </div>
           <form action="" method="post" onSubmit={submitAnswer}>
             <input
               type="text"
@@ -97,13 +104,13 @@ const App = () => {
               onChange={(e) => setAnswer(e.target.value)}
               className="border border-gray-500 rounded p-2"
             />
-            <button type="submit">Submit your Answer</button>
+            <button
+              className="bg-blue-700 text-white border-4 border-black  text-sm px-4 py-2 shadow-[4px_4px_0px_0px_#000] hover:bg-blue-800"
+              type="submit"
+            >
+              Start Game
+            </button>
           </form>
-        </div>
-        <div>
-          <h1>Score Board</h1>
-          <p>Score: {score}</p>
-          <p>Rupee: {rupee}</p>
         </div>
       </div>
 
@@ -116,7 +123,7 @@ const App = () => {
             <p>Your Rupees: {rupee}</p>
             <button
               onClick={restartQuiz}
-              className="mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+              className="mt-4 p-2 bg-blue-500 text-white border-4 border-black hover:bg-blue-700 shadow-[6px_8px_0_#000]"
             >
               Restart Quiz
             </button>
