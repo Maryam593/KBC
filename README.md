@@ -1,33 +1,56 @@
-# 🎮 KBC Quiz Game (React + TypeScript + Tailwind + FastAPI)
+# KBC - Trivia Quiz Game
 
-A simple, fun, and interactive **Kaun Banega Crorepati-style quiz game** built using React and TypeScript for the frontend and FastAPI (Python) for the backend.
+Welcome to **KBC (Kaun Banega Crorepati)**, a fun and interactive trivia quiz game inspired by the popular TV show. This project is designed to provide an engaging quiz experience, allowing users to test their knowledge across various topics.
 
 ---
 
 ## 🚀 Features
 
-- 🎯 Random question generation
-- ✅ Answer checking with instant feedback
-- 🏆 Score & Rupee tracking
-- 🛑 Auto-end quiz after final question
-- 🔁 Quiz restart option
-- 🔊 Sound effects (button click, end quiz)
-- 🎨 Styled with Tailwind CSS
-- 😎 Cool GIFs and UI enhancements
+- Dynamic and interactive quiz interface
+- Multi-level question difficulty
+- Lifelines to assist players during the game
+- Responsive design for various devices
+- Built using **TypeScript**, **Python**, **CSS**, **HTML**, and **JavaScript**
 
 ---
 
-## 📦 Technologies Used
+## 📂 Project Structure
 
-### Frontend:
-- React
-- TypeScript
-- Axios
-- Tailwind CSS
-
-### Backend:
-- FastAPI (Python)
-- CORS support
-- Local JSON or database-based question handling
+- **Frontend**: Built with HTML, CSS, and JavaScript for a responsive and intuitive user interface.
+- **Backend**: Powered by Python for handling logic and data processing.
+- **Core Logic**: Managed with TypeScript for type-safe and scalable development.
 
 ---
+
+## 🛠️ Installation and Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Maryam593/KBC.git
+   cd KBC
+2. Install dependencies:
+   ```bash
+   # For the backend
+   pip install -r requirements.txt
+   # For the frontend (if using Node.js for build tools)
+   npm install
+3. Run the application:
+   ```bash
+   # Start the backend server
+    uvicorn logic:app --reload
+   # For the frontend (if applicable)
+   npm run dev
+4. Open your browser and navigate to:
+   http://localhost:5173
+   to start your quiz
+---
+
+## 📦 Dependencies
+- Backend: Python libraries (Flask/Django/FastAPI, etc., based on your implementation)
+- Frontend: TypeScript, Node.js, CSS frameworks (if applicable)
+
+## 📧 Contact
+If you have any questions or suggestions, feel free to open an issue or contact me at maryams91101@gmail.com.
+
+  
+   
