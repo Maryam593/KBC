@@ -1,5 +1,8 @@
 # KBC - Trivia Quiz Game
 
+![Blue Colorful Pixel Trivia Quiz Presentation  (2)](https://github.com/user-attachments/assets/2cf03380-a31e-4125-964f-620ed622ff71)
+
+
 Welcome to **KBC (Kaun Banega Crorepati)**, a fun and interactive trivia quiz game inspired by the popular TV show. This project is designed to provide an engaging quiz experience, allowing users to test their knowledge across various topics.
 
 ---
